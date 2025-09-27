@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: #156;
+    font-size: 14px;
+    background-image: url('../img/by.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+a {
+    text-decoration: none;
+}
+.card{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0,0,0,.12);
+}
+
+.page-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.bg-login {
+    background-image: url('../img/登录页面.jpg') !important;
+}
+
+.bg-register {
+    background-image: url('../img/注册.jpg') !important;
+}
+
+.bg-home {
+    background-image: url('../img/轮1.jpg') !important;
+}
+
+.bg-test {
+    background-image: url('../img/测评.jpg') !important;
+}
+
+.bg-chat {
+    background-image: url('../img/by1.jpg') !important;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.TestResultMapper">
+    <resultMap id="BaseResultMap" type="com.example.entity.TestResult">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="test_type" property="testType"/>
+        <result column="score" property="score"/>
+        <result column="result_level" property="resultLevel"/>
+        <result column="result_description" property="resultDescription"/>
+        <result column="result_advice" property="resultAdvice"/>
+        <result column="test_date" property="testDate"/>
+        <result column="answers" property="answers"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.example.entity.TestResult" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO test_result (
+            user_id, test_type, score, result_level,
+            result_description, result_advice, test_date, answers
+        ) VALUES (
+            #{userId}, #{testType}, #{score}, #{resultLevel},
+            #{resultDescription}, #{resultAdvice}, #{testDate}, #{answers}
+        )
+    </insert>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT * FROM test_result
+        WHERE user_id = #{userId}
+        ORDER BY test_date DESC
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT * FROM test_result
+        ORDER BY test_date DESC
+    </select>
+</mapper> 
